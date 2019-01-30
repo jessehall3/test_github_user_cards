@@ -3,19 +3,23 @@ import React, {useState} from 'react'
 const Form = props => {
   const [username, setUsername] = useState('')
 
-  const fillTest = event => {
-    console.log("HELLLOOOO");
-    setUsername(event.target.value)
+  const handleSubmit = event => {
+    event.preventDefault()
+
     let el = document.querySelector('#test')
     el.innerText = username
+    // axios.get(`https://api.github.com/users/${username}`).then(resp => {
+    //   props.onSubmit(resp.data)
+    //   setUsername('')
+    // })
   }
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
         value={username}
-        onChange={fillTest}
+        onChange={event => setUsername(event.target.value)}
         placeholder="GitHub username"
         required
       />
