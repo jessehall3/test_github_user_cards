@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import axios from 'axios'
 
 const Form = props => {
   const [username, setUsername] = useState('')
@@ -8,10 +9,12 @@ const Form = props => {
 
     let el = document.querySelector('#test')
     el.innerText = username
-    // axios.get(`https://api.github.com/users/${username}`).then(resp => {
-    //   props.onSubmit(resp.data)
-    //   setUsername('')
-    // })
+
+    axios.get(`https://api.github.com/users/${username}`).then(resp => {
+      // props.onSubmit(resp.data)
+      console.log(resp.data);
+      setUsername('')
+    })
   }
 
   return (
