@@ -9,12 +9,13 @@ function App() {
     name: "Jessius Maximus",
     blog: "example.com",
   }
+  let cards = [cardProps, cardProps]
   return (
     <div className="App">
       <h1>
         Github User Cards
       </h1>
-      <Card {...cardProps} />
+      <CardList cards={cards} />
     </div>
   )
 }
