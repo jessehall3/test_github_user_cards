@@ -18,6 +18,10 @@ function App() {
       <hr/>
       <Form/>
       <hr/>
+      <h1 id="test">
+        Foo
+      </h1>
+      <hr/>
       <CardList cards={cards} />
     </div>
   )
