@@ -4,23 +4,33 @@ import CardList from './components/CardList'
 import './App.css';
 
 function App() {
-  let card = {
+  let testCard = {
     avatar_url: "https://avatars3.githubusercontent.com/u/37995847?s=460&v=4",
     name: "Jessius Maximus",
     blog: "example.com",
   }
-  let cards = [card, card]
+
+  let testCards = [testCard, testCard]
+
+  const [cards, setCards] = useState([])
+
+  const addNewCard = cardInfo => {
+    setCards(cards.concat(cardInfo))
+  }
+
   return (
     <div className="App">
       <h1>
         Github User Cards
       </h1>
       <hr/>
-      <Form/>
+      <Form onSubmit={addNewCard}/>
       <hr/>
       <h1 id="test">
         Foo
       </h1>
+      <hr/>
+      <CardList cards={testCards} />
       <hr/>
       <CardList cards={cards} />
     </div>
