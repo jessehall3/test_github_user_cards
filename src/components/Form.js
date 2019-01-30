@@ -7,12 +7,8 @@ const Form = props => {
   const handleSubmit = event => {
     event.preventDefault()
 
-    let el = document.querySelector('#test')
-    el.innerText = username
-
     axios.get(`https://api.github.com/users/${username}`).then(resp => {
       props.onSubmit(resp.data)
-      console.log(resp.data);
       setUsername('')
     })
   }

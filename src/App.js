@@ -10,8 +10,6 @@ function App() {
     blog: "example.com",
   }
 
-  let testCards = [testCard, testCard]
-
   const [cards, setCards] = useState([])
 
   const addNewCard = cardInfo => {
@@ -26,11 +24,7 @@ function App() {
       <hr/>
       <Form onSubmit={addNewCard}/>
       <hr/>
-      <h1 id="test">
-        Foo
-      </h1>
-      <hr/>
-      <CardList cards={testCards} />
+      <CardList cards={[testCard]} />
       <hr/>
       <CardList cards={cards} />
     </div>
